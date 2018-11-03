@@ -8,9 +8,6 @@ public class MeleeScriptable : ScriptableObject {
     public uint weaponTier;
     public string weaponName;
 
-    //public bool isProd;
-   // public bool isBash;
-
     public enum typeList
     {
         prod,
@@ -26,5 +23,22 @@ public class MeleeScriptable : ScriptableObject {
 
     public Sprite weaponSprite;
 
+    public BoxCollider2D hitbox;
+
     public GameObject cursor;
+
+    public void pointWeapon()
+    {
+        
+    }
+
+    public void prodAttack()
+    {
+        
+    }
+
+    public void swingAttack()
+    {
+
+    }
 }
