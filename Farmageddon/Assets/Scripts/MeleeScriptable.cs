@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeScriptable : MonoBehaviour {
+[CreateAssetMenu(fileName = "New Melee", menuName = "Melee")]
+public class MeleeScriptable : ScriptableObject {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public uint weaponTier;
+    public string weaponName;
+
+    //public bool isProd;
+   // public bool isBash;
+
+    public enum typeList
+    {
+        prod,
+        bash,
+        slash
+    }
+
+    public typeList weaponType;
+
+    public float damage;
+    public float range;
+    public float speed;
+
+    public Sprite weaponSprite;
+
+    public GameObject cursor;
 }
