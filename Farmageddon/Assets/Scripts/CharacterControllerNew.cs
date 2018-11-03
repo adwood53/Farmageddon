@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class CharacterControllerNew : MonoBehaviour {
 
     public Vector2 movement;
@@ -9,10 +10,12 @@ public class CharacterControllerNew : MonoBehaviour {
     public float speed = 1;
     public Vector2 attack;
 
+    private Rigidbody2D rb;
+
     // Use this for initialization
     void Start ()
     {
-
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -26,8 +29,12 @@ public class CharacterControllerNew : MonoBehaviour {
 
     private void Update()
     {
+        rb.velocity = movement * speed;
+
+        /* OLD MOVEMENT METHOD
         moveAmount.x = transform.position.x + (movement.x * speed * Time.deltaTime);
         moveAmount.y = transform.position.y + (movement.y * speed * Time.deltaTime);
         transform.position = new Vector3(moveAmount.x, moveAmount.y, transform.position.z);
+        */
     }
 }
