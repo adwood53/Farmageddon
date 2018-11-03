@@ -21,6 +21,6 @@ public class cameraPositioner : MonoBehaviour {
         point = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.nearClipPlane));
 		cursor.transform.position = point;
 
-		centerPoint.transform.position = (point + character.transform.position) *  new Vector2(closeness, closeness);
+        centerPoint.transform.position = ((point + (character.transform.position * closeness)) / (closeness + 1));
 	}
 }
