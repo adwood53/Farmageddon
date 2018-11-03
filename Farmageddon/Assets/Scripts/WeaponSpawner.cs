@@ -5,52 +5,34 @@ using UnityEngine;
 public class WeaponSpawner : MonoBehaviour {
 
 
+    public GameObject cursor;
+    public GameObject gunSpawn;
     public GunWeapon currentGunWeapon;
-    public float fireRate;
-    public uint damage;
-    public float speed;
+    
 
+    public float rSpeed = 50;
+    private Vector2 direction;
+    private float angle;
+    private Quaternion rotation;
 
-    private uint tier;
-    private uint newTier;
     private Sprite gunWeapon;
     private Sprite gameBullet;
 
-    public Bullet bullet;
-
-    private bool isUpgraded = false; 
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {
         gunWeapon = currentGunWeapon.gunWeapon;
         gameBullet = currentGunWeapon.gameBullet;
-
-        fireRate = currentGunWeapon.fireRate;
-        damage = currentGunWeapon.damage;
-        speed = currentGunWeapon.speed;
-
-        tier = currentGunWeapon.tier;
+        spriteRenderer.sprite = currentGunWeapon.gunWeapon;
     }
 
     private void Update()
     {
-       
-    }
-
-    void ChangeWeapon()
-    {
-    
-    }
-
-    void ChangeTier()
-    {
-        newTier = tier + 1;
-        
-        if(isUpgraded)
-        {
-            currentGunWeapon = new GunWeapon
-        }
-
+        direction = cursor.transform.position - transform.position;
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rSpeed * Time.deltaTime);
     }
 
 }
