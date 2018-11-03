@@ -25,13 +25,6 @@ public class MeleeScriptable : ScriptableObject {
 
     public BoxCollider2D hitbox;
 
-    public GameObject cursor;
-
-    public void pointWeapon()
-    {
-        
-    }
-
     public void prodAttack()
     {
         
