@@ -19,6 +19,6 @@ MonoBehaviour:
   speed: 10
   fireRate: 8
   isAutomatic: 0
-  isShotgun: 1
+  isShotgun: 0
   bulletAmount: 4
   spreadAmount: 1
