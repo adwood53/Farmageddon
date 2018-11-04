@@ -142,7 +142,7 @@ MonoBehaviour:
   repathRate: 0.15
   canSearch: 1
   canMove: 1
-  maxSpeed: 10
+  maxSpeed: 2
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -175,7 +175,7 @@ MonoBehaviour:
   target1: {fileID: 0}
   target2: {fileID: 0}
   target: {fileID: 0}
-  StopDis: 2
+  StopDis: 0
 --- !u!212 &212917931712265116
 SpriteRenderer:
   m_ObjectHideFlags: 1

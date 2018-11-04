@@ -121,6 +121,8 @@ GameObject:
   - component: {fileID: 50130506484824278}
   - component: {fileID: 114636950442428588}
   - component: {fileID: 61627251121281476}
+  - component: {fileID: 114412756982278068}
+  - component: {fileID: 95487286931634680}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -509,6 +511,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.68}
   m_EdgeRadius: 0
+--- !u!95 &95487286931634680
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398474006547052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c58ae8d517ffca74087a33d31f1b87c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114000284249212212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -578,6 +598,17 @@ MonoBehaviour:
   currentGunWeapon: {fileID: 11400000, guid: 101072ca792aeba4eadf6fecaef26469, type: 2}
   rSpeed: 50
   playerGun: {fileID: 1572883434937386}
+--- !u!114 &114412756982278068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398474006547052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589af1df67b21754bb65cc7793ef06ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114431840088244850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
-  speed: 10
+  speed: 3
   attack: {x: 0, y: 0}
   scroll: 0
 --- !u!114 &114693851317585620
@@ -673,7 +704,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab7c27d8e6cd9a8448ae049d056f6560, type: 2}
   - {fileID: 11400000, guid: 101072ca792aeba4eadf6fecaef26469, type: 2}
   - {fileID: 11400000, guid: c4eeb4a0f71309349b70d4cebfc076ef, type: 2}
-  - {fileID: 11400000, guid: b07df9add7d5bff42ac774bd8c9d4854, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: af2b5414d2dbbc34f937151fc83348a2, type: 2}
   - {fileID: 11400000, guid: d4eb9345ce72bac499eaf222d58523ca, type: 2}
   - {fileID: 11400000, guid: a84df5aa221bb3845b1b3759006fbac7, type: 2}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AnimatedPlayerScript : MonoBehaviour {
 
     private Vector2 movement;
