@@ -3,7 +3,7 @@
 public class cameraPositioner : MonoBehaviour {
 
  	public float closeness;
-    private Camera camera;
+    public Camera camera;
 	public GameObject cursor;
 	public GameObject character;
 	public GameObject centerPoint;
@@ -11,7 +11,6 @@ public class cameraPositioner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		camera = Camera.main;
 		point = new Vector3();
 	}
 	
