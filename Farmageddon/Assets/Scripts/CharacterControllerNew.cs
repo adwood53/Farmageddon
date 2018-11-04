@@ -10,6 +10,8 @@ public class CharacterControllerNew : MonoBehaviour {
     public float speed = 1;
     public Vector2 attack;
 
+    private float Health = 100;
+
     private Rigidbody2D rb;
 
     // Use this for initialization
@@ -25,6 +27,21 @@ public class CharacterControllerNew : MonoBehaviour {
         movement.y = Input.GetAxis("Vertical");
         attack.x = Input.GetAxis("Fire1");
         attack.y = Input.GetAxis("Fire2");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Health = Health - 7;
+            Debug.Log(Health);
+        }
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Dead");
+        }
     }
 
     private void Update()

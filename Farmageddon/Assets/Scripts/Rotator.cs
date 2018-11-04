@@ -7,7 +7,7 @@ public class Rotator : MonoBehaviour {
     Transform trans_form;
     Transform trans_man;
     public float dist;
-    public float angle = 0;
+    private float angle = 0;
     public float rotspeed;
 
 	// Use this for initialization
