@@ -206,7 +206,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082961548877246, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114356212930742318, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
@@ -239,47 +239,24 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &671711885
+--- !u!1 &624231940 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 671711886}
-  - component: {fileID: 671711887}
-  m_Layer: 0
-  m_Name: Behind
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &671711886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 671711885}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.094968, y: 6.1604657, z: -10.287998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 350338704}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &671711887
+  m_CorrespondingSourceObject: {fileID: 1519705055696068, guid: 9a310aafd13a9694e833ea0fe733715d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1946378683}
+--- !u!114 &624231941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 671711885}
+  m_GameObject: {fileID: 624231940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e0d651a899aa84286623114ba6421d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4174b4bdc19b6034e9f7274f93a32ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dist: 7
+  Target: {fileID: 350338704}
+  Dist: 6
 --- !u!1 &704462082
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +435,7 @@ GameObject:
   - component: {fileID: 1486286793}
   - component: {fileID: 1486286792}
   m_Layer: 4
-  m_Name: New Sprite
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +543,7 @@ Transform:
   m_LocalScale: {x: 0.575, y: 5.485156, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1609454030
 GameObject:
@@ -648,7 +625,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082961548877246, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114356212930742318, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
@@ -771,28 +748,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082961548877246, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114356212930742318, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 671711886}
+      objectReference: {fileID: 350338704}
     - target: {fileID: 114356212930742318, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: StopDis
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114356212930742318, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: target1
       value: 
-      objectReference: {fileID: 671711886}
+      objectReference: {fileID: 350338704}
     - target: {fileID: 114356212930742318, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: target2
       value: 
-      objectReference: {fileID: 671711886}
+      objectReference: {fileID: 350338704}
     - target: {fileID: 1519705055696068, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
       propertyPath: m_Name
       value: Demon
