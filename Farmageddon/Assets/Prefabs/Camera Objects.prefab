@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeness: 5
+  camera: {fileID: 20694700208713382}
   cursor: {fileID: 1669783088036300}
   character: {fileID: 0}
   centerPoint: {fileID: 1692340046148800}
