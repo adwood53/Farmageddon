@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
   m_Name: T1_Rifle
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   gunWeapon: {fileID: 21300000, guid: d3bb39d3636c89d45a9b9b8efb3ca96c, type: 3}
+=======
+  gunWeapon: {fileID: 21300000, guid: 7205fe62999c73444a0a09ab3c092d16, type: 3}
+>>>>>>> master
   gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
   tier: 2
   gunName: AR tier 1

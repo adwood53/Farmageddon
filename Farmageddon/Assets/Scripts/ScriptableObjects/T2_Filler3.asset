@@ -9,22 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
-  m_Name: T1_Shotgun
+  m_Name: T2_Filler3
   m_EditorClassIdentifier: 
-  gunWeapon: {fileID: 21300000, guid: 019a46d57e5f5b046bd10662f10d6251, type: 3}
+  gunWeapon: {fileID: 21300000, guid: 6e88ab0dde8747240a4f225c16656ef3, type: 3}
   gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
-  tier: 0
-<<<<<<< HEAD
-  gunName: Single Barrel Shotgun
-  damage: 2
-  speed: 1
-=======
-  gunName: Spas 12
-  damage: 15
-  speed: 3
->>>>>>> master
-  fireRate: 0.5
+  tier: 2
+  gunName: FILLER 3
+  damage: 10
+  speed: 10
+  fireRate: 10
   isAutomatic: 0
-  isShotgun: 0
-  bulletAmount: 4
-  spreadAmount: 6
+  isShotgun: 1
+  bulletAmount: 32
+  spreadAmount: 16

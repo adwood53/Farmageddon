@@ -20,5 +20,9 @@ MonoBehaviour:
   fireRate: 8
   isAutomatic: 0
   isShotgun: 0
+<<<<<<< HEAD
   bulletAmount: 4
+=======
+  bulletAmount: 1
+>>>>>>> master
   spreadAmount: 1
