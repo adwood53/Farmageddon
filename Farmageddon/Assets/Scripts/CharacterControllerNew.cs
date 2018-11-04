@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterControllerNew : MonoBehaviour {
 
     public Vector2 movement;
-    public Vector2 moveAmount;
     public float speed = 1;
     public Vector2 attack;
     public float scroll;

@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
-  m_Name: T1_Rifle
+  m_Name: T2_Filler1
   m_EditorClassIdentifier: 
-  gunWeapon: {fileID: 21300000, guid: 7205fe62999c73444a0a09ab3c092d16, type: 3}
+  gunWeapon: {fileID: 21300000, guid: 6e88ab0dde8747240a4f225c16656ef3, type: 3}
   gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
   tier: 2
-  gunName: Pistol Upgrade 2
-  damage: 7
-  speed: 8
-  fireRate: 3
+  gunName: FILLER 1
+  damage: 10
+  speed: 10
+  fireRate: 10
   isAutomatic: 0
   isShotgun: 0
   bulletAmount: 1
