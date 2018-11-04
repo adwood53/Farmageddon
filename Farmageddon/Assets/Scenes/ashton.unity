@@ -193,6 +193,18 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114492680182900718, guid: 77258a98edf11e642a094c0d33216f94,
+        type: 2}
+      propertyPath: currentGunWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 101072ca792aeba4eadf6fecaef26469,
+        type: 2}
+    - target: {fileID: 114724401141633054, guid: 77258a98edf11e642a094c0d33216f94,
+        type: 2}
+      propertyPath: currentGunWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 101072ca792aeba4eadf6fecaef26469,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77258a98edf11e642a094c0d33216f94, type: 2}
   m_IsPrefabAsset: 0
@@ -452,7 +464,7 @@ GameObject:
   - component: {fileID: 1427350235}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

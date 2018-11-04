@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
-  m_Name: Pistol
+  m_Name: T1_Pistol
   m_EditorClassIdentifier: 
   gunWeapon: {fileID: 21300000, guid: d3bb39d3636c89d45a9b9b8efb3ca96c, type: 3}
-  gameBullet: {fileID: 21300000, guid: 26bc4bd1fd9c3764283861ac38121f1d, type: 3}
+  gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
   tier: 1
   gunName: Pistol
   damage: 5
