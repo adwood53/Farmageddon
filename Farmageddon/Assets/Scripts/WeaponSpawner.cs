@@ -17,19 +17,18 @@ public class WeaponSpawner : MonoBehaviour {
     private Sprite gunWeapon;
     private Sprite gameBullet;
 
-    public SpriteRenderer spriteRenderer;
+    public GameObject playerGun;
 
     void Start()
     {
         gunWeapon = currentGunWeapon.gunWeapon;
         gameBullet = currentGunWeapon.gameBullet;
-        spriteRenderer.sprite = currentGunWeapon.gunWeapon;
-
-        
     }
 
     private void Update()
     {
+
+        playerGun.GetComponent<SpriteRenderer>().sprite = currentGunWeapon.gunWeapon;
         direction = cursor.transform.position - transform.position;
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rotation = Quaternion.AngleAxis(angle, Vector3.forward);

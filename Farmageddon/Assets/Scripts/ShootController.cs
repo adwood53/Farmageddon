@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class ShootController : MonoBehaviour {
 
-    public Vector2 speed;
-
-    Rigidbody2D rb2d;
-
     public GunWeapon currentGunWeapon;
+    public GameObject player;
+    float lastFired = 0;
 
     private float damage;
     private float bulletSpeed;
     private float fireRate;
-    Transform firePoint;
+    private bool isAutomatic;
+    private bool isShotgun;
+    private int spreadAmount;
+    private int bulletAmount;
 
     private GameObject bullet;
     private Rigidbody2D bulletRB;
@@ -22,54 +23,88 @@ public class ShootController : MonoBehaviour {
     private Sprite gameBullet;
     private GameObject clone;
 
-    
-
-	// Use this for initialization
-	void Start ()
+    void Config ()
     {
-        gameBullet = currentGunWeapon.gameBullet;
-        
+        damage = currentGunWeapon.damage;
+        bulletSpeed = currentGunWeapon.speed;
+        fireRate = currentGunWeapon.fireRate;
+        isAutomatic = currentGunWeapon.isAutomatic;
+        isShotgun = currentGunWeapon.isShotgun;
+        bulletAmount = currentGunWeapon.bulletAmount;
+        spreadAmount = currentGunWeapon.spreadAmount;
 
         bullet = new GameObject();
         bullet.AddComponent<SpriteRenderer>();
         bullet.AddComponent<Rigidbody2D>();
         bullet.AddComponent<BoxCollider2D>();
+        bullet.AddComponent(typeof(BulletScript));
+
+        gameBullet = currentGunWeapon.gameBullet;
 
         bulletRB = bullet.GetComponent<Rigidbody2D>();
         bullet.GetComponent<SpriteRenderer>().sprite = gameBullet;
-
-        damage = currentGunWeapon.damage;
-        bulletSpeed = currentGunWeapon.speed;
-        fireRate = currentGunWeapon.fireRate;
+        bullet.GetComponent<SpriteRenderer>().sortingOrder = -1;
 
         bulletRB.gravityScale = 0;
         bulletRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         bulletRB.bodyType = RigidbodyType2D.Kinematic;
 
-       
-        //bulletRB.velocity.Set(gameObject.transform.forward.x * bulletSpeed, gameObject.transform.forward.y * bulletSpeed);
-        //bulletRB.AddForce(new Vector2(10, 10));
         bullet.transform.localScale = new Vector3(1, 1, 0);
+       
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        bullet.transform.position = gameObject.transform.position;
-        bullet.transform.rotation = gameObject.transform.rotation;
-        if (Input.GetMouseButtonDown(0))
+
+        if (!isAutomatic && Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+        if (isAutomatic && Input.GetButton("Fire1"))
+        {
+            if (Time.time - lastFired > 1 / fireRate)
+            {
+               lastFired = Time.time;
+               Shoot();
+            }
+
         }
 	}
 
     void Shoot()
     {
+        Config();
         
-        clone = (GameObject) Instantiate(bullet);
-        clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(clone.transform.rotation.z*4) * bulletSpeed, Mathf.Sin(clone.transform.rotation.z*4) * bulletSpeed);
-        Debug.Log(clone.GetComponent<Rigidbody2D>().velocity);
+        
+            bullet.transform.position = gameObject.transform.position;
+            bullet.transform.rotation = gameObject.transform.rotation;
 
+        if (!isShotgun)
+        {
+            clone = (GameObject)Instantiate(bullet);
+            clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
+            DestroyObject(bullet);
+            Destroy(clone, 1);
+            Vector2 screenPosition = Camera.main.WorldToScreenPoint(clone.transform.position);
+            if (screenPosition.y > Screen.height || screenPosition.y < 0)
+                Destroy(clone);
+        }
+        else if (isShotgun)
+        {
+            for (int i = 0; i < bulletAmount; i++)
+            {
+                bullet.transform.position = gameObject.transform.position;
+                bullet.transform.rotation = gameObject.transform.rotation;
+
+                clone = (GameObject)Instantiate(bullet);
+                clone.transform.Rotate(0, 0, ((i - ((bulletAmount / 2)))) * spreadAmount);
+                clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
+                clone.AddComponent(typeof(BulletScript));
+                DestroyObject(bullet);
+            }
+        }
 
     }
+
 }
