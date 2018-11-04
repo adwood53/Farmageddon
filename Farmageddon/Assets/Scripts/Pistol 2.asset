@@ -18,4 +18,8 @@ MonoBehaviour:
   damage: 7
   speed: 8
   fireRate: 3
-  WeaponType: 1
+  gunType:
+  - Auto
+  - Semi
+  - Shotgun
+  - AutoShotgun

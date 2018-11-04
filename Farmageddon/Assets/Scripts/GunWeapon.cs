@@ -15,15 +15,9 @@ public class GunWeapon : ScriptableObject {
     public float speed;
     public float fireRate;
 
-    public enum TypeList
-    {
-        auto,
-        semi,
-        shotgun,
-        autoShotgun
-    }
+    public string[] gunType = new string[] { "Auto", "Semi", "Shotgun", "AutoShotgun" };
 
-    public TypeList WeaponType; 
+    
 
     
     void Start()

@@ -8,7 +8,6 @@ public class WeaponSpawner : MonoBehaviour {
     public GameObject cursor;
     public GameObject gunSpawn;
     public GunWeapon currentGunWeapon;
-    
 
     public float rSpeed = 50;
     private Vector2 direction;
@@ -25,6 +24,8 @@ public class WeaponSpawner : MonoBehaviour {
         gunWeapon = currentGunWeapon.gunWeapon;
         gameBullet = currentGunWeapon.gameBullet;
         spriteRenderer.sprite = currentGunWeapon.gunWeapon;
+
+        
     }
 
     private void Update()
