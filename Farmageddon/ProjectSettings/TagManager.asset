@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Cursor
+=======
+  - Enemy
+>>>>>>> Aaron
   layers:
   - Default
   - TransparentFX
