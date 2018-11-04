@@ -51,8 +51,7 @@ public class InventoryManager : MonoBehaviour {
 				{
 					//catches exception
 					Debug.Log("INVENTORY MANAGER gunList[] conversion fail! Please check number of scriptable object guns is multiple of 3!");
-					possibleGuns[i,j] = gunList[0];
-					count++;
+					possibleGuns[i,j] = gunList[count-1];
 				}
 			}
 		}
