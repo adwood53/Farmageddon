@@ -10,7 +10,9 @@ public class InventoryManager : MonoBehaviour {
 	private int[] xps;             //An array for all the XP amounts of the different weapons
 	private int[] tiers;           //An array for the tiers of the different weapons
 
-	public GameObject[] weaps; //An array to store the weapons that can be used
+	public GunChanger[] weaps; //An array to store the weapons that can be used
+	public GunWeapon[] gunList;
+	public GunWeapon[,] possibleGuns; //Array for all the possible guns to use
 
 	public enum selectedWeapon //A enum to store the weapon types
 	{
@@ -28,8 +30,32 @@ public class InventoryManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		holding = 0;
 		xps = new int[3];
-		tiers = new int[3];
+		tiers = new int[3] {1,1,1};
+
+		possibleGuns = new GunWeapon[gunList.Length / 3,3];
+
+		//Converts a single array into a multi-dimensional array
+		int count = 0;
+		for(int i = 0; i < gunList.Length / 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			{
+				if(gunList[count] != null)
+				{
+					possibleGuns[i,j] = gunList[count];
+					count++;
+				}
+				else
+				{
+					//catches exception
+					Debug.Log("INVENTORY MANAGER gunList[] conversion fail! Please check number of scriptable object guns is multiple of 3!");
+					possibleGuns[i,j] = gunList[0];
+					count++;
+				}
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -45,6 +71,7 @@ public class InventoryManager : MonoBehaviour {
 			Debug.Log("Leveling up weapon: " + holding);
 			xps[(int)holding] = 0;
 			tiers[(int)holding]++;
+			Upgrade(tiers[(int)holding]); //Gives the tier of the weapon currently being held
 		}
 	}
 
@@ -55,9 +82,9 @@ public class InventoryManager : MonoBehaviour {
 		{
 			//Goes through each element in weapons and disables
 			int count = 0;
-			foreach(GameObject element in weaps)
+			foreach(GunChanger element in weaps)
 			{
-				weaps[count].SetActive(false);
+				weaps[count].gameObject.SetActive(false);
 				count++;
 			}
 			if(scroll > 0) //if we scroll forwards
@@ -77,7 +104,7 @@ public class InventoryManager : MonoBehaviour {
 				} 
 			}
 			//activates the current weapon
-			weaps[(int)holding].SetActive(true);
+			weaps[(int)holding].gameObject.SetActive(true);
 			lastSwap = Time.time;
 		}
 	}
@@ -98,6 +125,13 @@ public class InventoryManager : MonoBehaviour {
 
 	void Upgrade(int tier) //For changing tier (cant implement til have weapon object)
 	{
-
+		if(tier > gunList.Length / 3)
+		{
+			Debug.Log("Out of upgrades for gun!");
+		}
+		else
+		{
+			weaps[(int)holding].ChangeGun(possibleGuns[tier-1,Random.Range(0,2)]);
+		}
 	}
 }

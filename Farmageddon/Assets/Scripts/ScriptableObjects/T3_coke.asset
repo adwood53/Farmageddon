@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
-  m_Name: T1_Rifle
+  m_Name: T3_coke
   m_EditorClassIdentifier: 
-  gunWeapon: {fileID: 21300000, guid: 019a46d57e5f5b046bd10662f10d6251, type: 3}
-  gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
-  tier: 2
-  gunName: Pistol Upgrade 2
-  damage: 7
-  speed: 8
-  fireRate: 3
-  isAutomatic: 0
+  gunWeapon: {fileID: 21300000, guid: 9035243905d0e5747bea0a5cc2b830c1, type: 3}
+  gameBullet: {fileID: 21300000, guid: 9035243905d0e5747bea0a5cc2b830c1, type: 3}
+  tier: 0
+  gunName: daddy
+  damage: 0
+  speed: 5
+  fireRate: 15
+  isAutomatic: 1
   isShotgun: 0
   bulletAmount: 1
   spreadAmount: 1

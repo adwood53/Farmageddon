@@ -6,10 +6,11 @@ using UnityEngine;
 public class CharacterControllerNew : MonoBehaviour {
 
     public Vector2 movement;
-    public Vector2 moveAmount;
     public float speed = 1;
     public Vector2 attack;
     public float scroll;
+
+    private float Health = 100;
 
     private Rigidbody2D rb;
     private InventoryManager im;
@@ -29,6 +30,21 @@ public class CharacterControllerNew : MonoBehaviour {
         attack.x = Input.GetAxis("Fire1");
         attack.y = Input.GetAxis("Fire2");
         scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Health = Health - 7;
+            Debug.Log(Health);
+        }
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Dead");
+        }
     }
 
     private void Update()
