@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponSpawner : MonoBehaviour {
 
-
     public GameObject cursor;
     public GameObject gunSpawn;
     public GunWeapon currentGunWeapon;
@@ -27,12 +26,10 @@ public class WeaponSpawner : MonoBehaviour {
 
     private void Update()
     {
-
         playerGun.GetComponent<SpriteRenderer>().sprite = currentGunWeapon.gunWeapon;
         direction = cursor.transform.position - transform.position;
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rSpeed * Time.deltaTime);
     }
-
 }
