@@ -666,6 +666,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.22908404
       objectReference: {fileID: 0}
+    - target: {fileID: 114434785594794402, guid: 9a310aafd13a9694e833ea0fe733715d,
+        type: 2}
+      propertyPath: endReachedDistance
+      value: 5.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
   m_IsPrefabAsset: 0
@@ -777,17 +782,22 @@ Prefab:
     - target: {fileID: 212441093502942874, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.9339623
+      value: 0.16470587
       objectReference: {fileID: 0}
     - target: {fileID: 212441093502942874, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.16300285
+      value: 0.3328501
       objectReference: {fileID: 0}
     - target: {fileID: 212441093502942874, guid: 9a310aafd13a9694e833ea0fe733715d,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.16300285
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 114434785594794402, guid: 9a310aafd13a9694e833ea0fe733715d,
+        type: 2}
+      propertyPath: whenCloseToDestination
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a310aafd13a9694e833ea0fe733715d, type: 2}
