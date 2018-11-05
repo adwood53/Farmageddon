@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour {
 	public GunChanger[] weaps; //An array to store the weapons that can be used
 	public GunWeapon[] gunList;
 	public GunWeapon[,] possibleGuns; //Array for all the possible guns to use
+	public string gunName;
 
 	public enum selectedWeapon //A enum to store the weapon types
 	{
@@ -51,8 +52,7 @@ public class InventoryManager : MonoBehaviour {
 				{
 					//catches exception
 					Debug.Log("INVENTORY MANAGER gunList[] conversion fail! Please check number of scriptable object guns is multiple of 3!");
-					possibleGuns[i,j] = gunList[0];
-					count++;
+					possibleGuns[i,j] = gunList[count-1];
 				}
 			}
 		}
@@ -73,6 +73,8 @@ public class InventoryManager : MonoBehaviour {
 			tiers[(int)holding]++;
 			Upgrade(tiers[(int)holding]); //Gives the tier of the weapon currently being held
 		}
+
+		gunName = weaps[(int)holding].GunName();
 	}
 
 	public void CycleWeapon(float scroll) //changes weapon

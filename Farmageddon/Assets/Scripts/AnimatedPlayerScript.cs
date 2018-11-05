@@ -42,7 +42,7 @@ public class AnimatedPlayerScript : MonoBehaviour {
 
         else
         {
-            animator.SetTrigger("PlayerIdle");
+            animator.SetTrigger("PlayerDown");
         }
 
     }

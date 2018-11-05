@@ -210,6 +210,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1804241808329038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4115207246235650}
+  - component: {fileID: 114055336977581696}
+  - component: {fileID: 58806518813032162}
+  m_Layer: 0
+  m_Name: Activator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1847776965769208
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +300,19 @@ Transform:
   m_Father: {fileID: 4298380150717728}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4115207246235650
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804241808329038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4398323988651674}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4270345997646060
 Transform:
   m_ObjectHideFlags: 1
@@ -353,6 +383,7 @@ Transform:
   - {fileID: 4298380150717728}
   - {fileID: 4270345997646060}
   - {fileID: 4921176030309630}
+  - {fileID: 4115207246235650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486,6 +517,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58806518813032162
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804241808329038}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
 --- !u!61 &61627251121281476
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -542,6 +588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGunWeapon: {fileID: 11400000, guid: ab7c27d8e6cd9a8448ae049d056f6560, type: 2}
   player: {fileID: 1398474006547052}
+  damage: 0
+  clone: {fileID: 0}
 --- !u!114 &114040228898973314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -558,6 +606,17 @@ MonoBehaviour:
   currentGunWeapon: {fileID: 11400000, guid: c4eeb4a0f71309349b70d4cebfc076ef, type: 2}
   rSpeed: 50
   playerGun: {fileID: 1149044481131670}
+--- !u!114 &114055336977581696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804241808329038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243bee2e518f93a499524aba274cd786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114094062905926554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,6 +731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGunWeapon: {fileID: 11400000, guid: c4eeb4a0f71309349b70d4cebfc076ef, type: 2}
   player: {fileID: 1398474006547052}
+  damage: 0
+  clone: {fileID: 0}
 --- !u!114 &114775850517268198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -685,6 +746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGunWeapon: {fileID: 11400000, guid: 101072ca792aeba4eadf6fecaef26469, type: 2}
   player: {fileID: 1398474006547052}
+  damage: 0
+  clone: {fileID: 0}
 --- !u!114 &114892537458588996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,15 +767,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab7c27d8e6cd9a8448ae049d056f6560, type: 2}
   - {fileID: 11400000, guid: 101072ca792aeba4eadf6fecaef26469, type: 2}
   - {fileID: 11400000, guid: c4eeb4a0f71309349b70d4cebfc076ef, type: 2}
-  - {fileID: 11400000, guid: b07df9add7d5bff42ac774bd8c9d4854, type: 2}
+  - {fileID: 11400000, guid: 55d36bd10e7cc7d4ab9bce0f4225d62a, type: 2}
   - {fileID: 11400000, guid: af2b5414d2dbbc34f937151fc83348a2, type: 2}
   - {fileID: 11400000, guid: d4eb9345ce72bac499eaf222d58523ca, type: 2}
   - {fileID: 11400000, guid: a84df5aa221bb3845b1b3759006fbac7, type: 2}
   - {fileID: 11400000, guid: a84df5aa221bb3845b1b3759006fbac7, type: 2}
   - {fileID: 11400000, guid: a84df5aa221bb3845b1b3759006fbac7, type: 2}
+  gunName: 
   levelUpAmount: 10
   holding: 0
-  holdingTier: 0
+  holdingTier: 1
   holdingXP: 0
 --- !u!114 &114932725659494094
 MonoBehaviour:

@@ -2245,6 +2245,12 @@ Prefab:
       propertyPath: cursor
       value: 
       objectReference: {fileID: 1495399070}
+    - target: {fileID: 114892537458588996, guid: fa4ad96aba88b24498131984e7c16113,
+        type: 2}
+      propertyPath: gunList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 55d36bd10e7cc7d4ab9bce0f4225d62a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4ad96aba88b24498131984e7c16113, type: 2}
   m_IsPrefabAsset: 0
