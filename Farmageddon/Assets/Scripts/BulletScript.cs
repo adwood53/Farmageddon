@@ -2,9 +2,10 @@
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
-	
-	// Update is called once per frame
-	void Update () {
+
+    public float damage;
+    // Update is called once per frame
+    void Update () {
         Vector2 screenPositiony = Camera.main.WorldToScreenPoint(transform.position);
         if (screenPositiony.y > Screen.height || screenPositiony.y < 0)
             Destroy(this.gameObject);
