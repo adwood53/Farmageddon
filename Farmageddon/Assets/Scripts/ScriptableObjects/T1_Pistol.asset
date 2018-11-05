@@ -17,7 +17,7 @@ MonoBehaviour:
   gunName: Nail Gun
   damage: 5
   speed: 10
-  fireRate: 0
+  fireRate: 1
   isAutomatic: 0
   isShotgun: 0
   bulletAmount: 1

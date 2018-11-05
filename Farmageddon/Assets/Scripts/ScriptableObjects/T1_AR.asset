@@ -17,7 +17,7 @@ MonoBehaviour:
   gunName: Board Gun
   damage: 7
   speed: 8
-  fireRate: 6
+  fireRate: 1
   isAutomatic: 1
   isShotgun: 0
   bulletAmount: 1

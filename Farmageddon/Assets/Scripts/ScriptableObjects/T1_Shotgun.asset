@@ -17,7 +17,7 @@ MonoBehaviour:
   gunName: Pa's Old Buck Shot
   damage: 3
   speed: 6
-  fireRate: 0
+  fireRate: 1
   isAutomatic: 0
   isShotgun: 1
   bulletAmount: 4
