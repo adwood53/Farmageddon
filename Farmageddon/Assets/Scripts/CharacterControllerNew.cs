@@ -15,11 +15,14 @@ public class CharacterControllerNew : MonoBehaviour {
     private Rigidbody2D rb;
     private InventoryManager im;
 
+    float Damage;
+
     // Use this for initialization
     void Start ()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         im = gameObject.GetComponent<InventoryManager>();
+        Damage = GameObject.Find("Zombie").GetComponent<EnemyController>().outputDamage;
     }
 	
 	// Update is called once per frame
@@ -36,7 +39,7 @@ public class CharacterControllerNew : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Health = Health - 7;
+            Health = Health - Damage;
             Debug.Log(Health);
         }
 

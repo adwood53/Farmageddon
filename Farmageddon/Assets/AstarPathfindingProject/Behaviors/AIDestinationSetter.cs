@@ -19,8 +19,6 @@ namespace Pathfinding {
         public Transform target2;
         public Transform target;
 
-        public float StopDis = 2;
-
         private Transform agent;
         private float yDis1;
         private float xDis1;

@@ -8,20 +8,21 @@ public class ShootController : MonoBehaviour {
     public GameObject player;
     float lastFired = 0;
 
-    private float damage;
+    [HideInInspector]public float damage;
     private float bulletSpeed;
     private float fireRate;
     private bool isAutomatic;
     private bool isShotgun;
     private int spreadAmount;
     private int bulletAmount;
+    private BulletScript bulletScript;
 
     private GameObject bullet;
     private Rigidbody2D bulletRB;
     private SpriteRenderer bulletSR;
 
     private Sprite gameBullet;
-    private GameObject clone;
+    [HideInInspector]public GameObject clone;
 
     void Config ()
     {
@@ -36,21 +37,24 @@ public class ShootController : MonoBehaviour {
         bullet = new GameObject();
         bullet.AddComponent<SpriteRenderer>();
         bullet.AddComponent<Rigidbody2D>();
-        bullet.AddComponent<BoxCollider2D>();
-        bullet.AddComponent(typeof(BulletScript));
-
-        gameBullet = currentGunWeapon.gameBullet;
-
         bulletRB = bullet.GetComponent<Rigidbody2D>();
         bullet.GetComponent<SpriteRenderer>().sprite = gameBullet;
         bullet.GetComponent<SpriteRenderer>().sortingOrder = -1;
+        bullet.AddComponent<BoxCollider2D>();
+        bullet.GetComponent<BoxCollider2D>().isTrigger = true;
+        bullet.AddComponent(typeof(BulletScript));
+        bullet.tag = "Weapon";
+
+        gameBullet = currentGunWeapon.gameBullet;
 
         bulletRB.gravityScale = 0;
         bulletRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         bulletRB.bodyType = RigidbodyType2D.Kinematic;
 
         bullet.transform.localScale = new Vector3(1, 1, 0);
-       
+
+        bulletScript = bullet.GetComponent<BulletScript>();
+        bulletScript.damage = damage;
     }
 	
 	// Update is called once per frame
@@ -101,6 +105,8 @@ public class ShootController : MonoBehaviour {
                 clone.transform.Rotate(0, 0, ((i - ((bulletAmount / 2)))) * spreadAmount);
                 clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
                 clone.AddComponent(typeof(BulletScript));
+                clone.GetComponent<BoxCollider2D>().enabled = true;
+                clone.GetComponent<BulletScript>().enabled = true;
                 DestroyObject(bullet);
             }
         }
