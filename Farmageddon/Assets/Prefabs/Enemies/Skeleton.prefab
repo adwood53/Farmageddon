@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4744184919430948}
   - component: {fileID: 212605749940266126}
+  - component: {fileID: 114172855027457456}
   - component: {fileID: 114137311032434396}
   - component: {fileID: 114442913412613246}
   - component: {fileID: 114430113825242942}
@@ -39,7 +40,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788354362431844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -2.71, y: 0.97, z: 5.0002847}
+=======
+  m_LocalPosition: {x: -7.116323, y: 5.5415945, z: 5.001101}
+>>>>>>> Aaron
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,6 +130,19 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: 1
+--- !u!114 &114172855027457456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788354362431844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1158842894872d2429b60b0d12de35e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 30
+  outputDamage: 5
 --- !u!114 &114430113825242942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,7 +158,7 @@ MonoBehaviour:
   target1: {fileID: 0}
   target2: {fileID: 0}
   target: {fileID: 0}
-  StopDis: 2
+  Damage: 0
 --- !u!114 &114442913412613246
 MonoBehaviour:
   m_ObjectHideFlags: 1

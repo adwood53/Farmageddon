@@ -15,7 +15,7 @@ MonoBehaviour:
   gameBullet: {fileID: 21300000, guid: 9035243905d0e5747bea0a5cc2b830c1, type: 3}
   tier: 0
   gunName: daddy
-  damage: 0
+  damage: 1
   speed: 5
   fireRate: 15
   isAutomatic: 1
