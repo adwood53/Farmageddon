@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour {
 
 	private bool xpUp = true;      //Whether or not it is possible to gain more XP (Extranious for testing)
 	private float lastSwap = 0;    //The time of the last weaponswap (used to stop scrolling too fast)
-	private float swapTime = 0;    //The time that must pass before the weapon can be swapped again
+	public float swapTime = 0;    //The time that must pass before the weapon can be swapped again
 	private int[] xps;             //An array for all the XP amounts of the different weapons
 	private int[] tiers;           //An array for the tiers of the different weapons
 

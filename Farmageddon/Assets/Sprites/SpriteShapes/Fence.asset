@@ -13,15 +13,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Angles:
   - m_Start: -45
-    m_End: 315
+    m_End: 45
     m_Order: 0
     m_Sprites:
-    - {fileID: 21300000, guid: 0adc8e5c1d3945a48b756f7a86585ed6, type: 3}
+    - {fileID: 21300000, guid: cf675db9b9a25cd468f0dad2f071756d, type: 3}
+  - m_Start: 45
+    m_End: 135
+    m_Order: 0
+    m_Sprites:
+    - {fileID: 21300000, guid: 2faaccdc9b2423844b1132995e586ec2, type: 3}
+  - m_Start: -135
+    m_End: -45
+    m_Order: 0
+    m_Sprites:
+    - {fileID: 21300000, guid: 2faaccdc9b2423844b1132995e586ec2, type: 3}
+  - m_Start: -225
+    m_End: -135
+    m_Order: 0
+    m_Sprites:
+    - {fileID: 21300000, guid: cf675db9b9a25cd468f0dad2f071756d, type: 3}
   m_FillTexture: {fileID: 0}
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 116f98bd5163a8247a0bc69572cbb853, type: 3}
   - m_CornerType: 1
     m_Sprites:
     - {fileID: 0}
@@ -44,8 +59,8 @@ MonoBehaviour:
     m_Sprites:
     - {fileID: 0}
   m_FillPixelPerUnit: 100
-  m_BevelSize: 0
-  m_BevelCutoff: 0
+  m_BevelSize: 0.5
+  m_BevelCutoff: 180
   m_FillOffset: 0
   m_WorldSpaceUV: 0
-  m_UseSpriteBorders: 1
+  m_UseSpriteBorders: 0
