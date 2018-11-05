@@ -26,6 +26,18 @@ public class GunChanger : MonoBehaviour {
 		shootController.currentGunWeapon = gun;
 	}
 
+	public string GunName()
+	{
+		string name = weaponSpawner.currentGunWeapon.gunName;
+		return name;
+	}
+
+	public Sprite GunSprite()
+	{
+		Sprite sprite = weaponSpawner.currentGunWeapon.gunWeapon;
+		return sprite;
+	}
+
 	// public void SetActive(bool active)
 	// {
 	// 	if(active)
