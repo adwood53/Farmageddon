@@ -11,18 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
   m_Name: T2_Filler1
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Farmageddon/Assets/Scripts/ScriptableObjects/T1_Rifle.asset
-  gunWeapon: {fileID: 21300000, guid: 019a46d57e5f5b046bd10662f10d6251, type: 3}
-=======
   gunWeapon: {fileID: 21300000, guid: 6e88ab0dde8747240a4f225c16656ef3, type: 3}
->>>>>>> master:Farmageddon/Assets/Scripts/ScriptableObjects/T2_Filler1.asset
   gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
   tier: 2
-  gunName: FILLER 1
+  gunName: FILLER 2
   damage: 10
   speed: 10
-  fireRate: 10
-  isAutomatic: 0
+  fireRate: 15
+  isAutomatic: 1
   isShotgun: 0
   bulletAmount: 1
   spreadAmount: 1
