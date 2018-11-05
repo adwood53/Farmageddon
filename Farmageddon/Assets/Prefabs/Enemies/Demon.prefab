@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 50414375560925324}
   m_Layer: 0
   m_Name: Demon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830509869414600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5294113, y: 1.7314144, z: 5.0002847}
+  m_LocalPosition: {x: -6.43, y: 5.19, z: 5.0002847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.64, y: 0.68}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830509869414600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
   m_Name: 
@@ -114,7 +114,6 @@ MonoBehaviour:
   target1: {fileID: 0}
   target2: {fileID: 0}
   target: {fileID: 0}
-  Damage: 0
 --- !u!114 &114442348205533370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +224,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: cd44d2db5e524964da37faa03f17ce11, type: 3}
   m_Color: {r: 0.735849, g: 0.0138419615, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
