@@ -10,7 +10,7 @@ public class CharacterControllerNew : MonoBehaviour {
     public Vector2 attack;
     public float scroll;
 
-    private float Health = 100;
+    public float Health = 100;
 
     private Rigidbody2D rb;
     private InventoryManager im;

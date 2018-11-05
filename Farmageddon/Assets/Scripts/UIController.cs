@@ -6,33 +6,72 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
 	public Image xpBar;
+	public Image healthBar;
 	public Image gunSprite;
 	public Text weaponName;
 	public Text weaponTier;
-	public InventoryManager character;
-	public float fillAmount = 0;
+	public Text healthAmt;
+	public GameObject character;
+	public float xpFillAmount = 0;
+	public float healthFillAmount = 0;
+	public GameObject gameOver;
+
+	private InventoryManager inventory;
+	private CharacterControllerNew health;
+	private float maxHealth = 0; //Automatically detects, no need to set to a value
 
 	// Use this for initialization
 	void Start () 
 	{
-
+		if(character != null)
+		{
+			inventory = character.gameObject.GetComponent<InventoryManager>();
+			health = character.gameObject.GetComponent<CharacterControllerNew>();
+		}
+		else
+		{
+			Debug.Log("Need to link character to UI!!");
+		}
+		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(character != null)
-		{
-			if(character.holdingTier > 0)
-			{
-			fillAmount = (float)character.holdingXP / (((float)character.holdingTier) * (float)character.levelUpAmount);
-			}
-			xpBar.fillAmount = fillAmount;
+		
 
-			weaponName.text = character.weaps[(int)character.holding].GunName();
-			weaponTier.text = character.holdingTier.ToString();
-			gunSprite.sprite = character.weaps[(int)character.holding].GunSprite();
+		if(inventory != null)
+		{
+			if(inventory.holdingTier > 0)
+			{
+			xpFillAmount = (float)inventory.holdingXP / (((float)inventory.holdingTier) * (float)inventory.levelUpAmount);
+			}
+			xpBar.fillAmount = xpFillAmount;
+
+			weaponName.text = inventory.weaps[(int)inventory.holding].GunName();
+			weaponTier.text = inventory.holdingTier.ToString();
+			gunSprite.sprite = inventory.weaps[(int)inventory.holding].GunSprite();
 		}
-		else Debug.Log("Need to Link Character to UI In Inspector!");
+		else
+		{
+			xpBar.fillAmount = 0;
+		}
+
+		if(health != null)
+		{
+			if(health.Health > maxHealth) maxHealth = health.Health;
+			healthFillAmount = health.Health / maxHealth;
+			healthBar.fillAmount = healthFillAmount;
+			healthAmt.text = health.Health.ToString();
+		}
+		else 
+		{
+			healthBar.fillAmount = 0;
+		}
+
+		if(healthBar.fillAmount == 0)
+		{
+			gameOver.SetActive(true);
+		}
 	}
 }

@@ -105,7 +105,7 @@ public class ShootController : MonoBehaviour {
                 clone = (GameObject)Instantiate(bullet);
                 clone.transform.Rotate(0, 0, ((i - ((bulletAmount / 2)))) * spreadAmount);
                 clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
-                GetComponent<SpriteRenderer>().sprite = gameBullet;
+                clone.GetComponent<SpriteRenderer>().sprite = gameBullet;
 
                 clone.AddComponent(typeof(BulletScript));
                 clone.GetComponent<BoxCollider2D>().enabled = true;
