@@ -25,8 +25,6 @@ namespace Pathfinding {
         private float yDis2;
         private float xDis2;
 
-        public float Damage;
-
         IAstarAI ai;
 
         void Start()
