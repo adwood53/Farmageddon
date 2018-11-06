@@ -223,6 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224701331709136354}
+  - component: {fileID: 114353349750968354}
   m_Layer: 5
   m_Name: BackingMusic
   m_TagString: Untagged
@@ -1342,6 +1343,7 @@ MonoBehaviour:
   xpFillAmount: 0
   healthFillAmount: 0
   gameOver: {fileID: 1273786560951940}
+  music: {fileID: 114353349750968354}
 --- !u!114 &114162097628729754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1396,6 +1398,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114353349750968354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511693841614820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b102e77edb95e4d92cb8e2352b7e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  volume: 0.5
+  bass: {fileID: 82743772385024588}
+  chords: {fileID: 82978354294061196}
+  motif: {fileID: 82000816962679000}
+  antiMotif: {fileID: 82993177862451356}
+  whine: {fileID: 82436033776343954}
+  drive: {fileID: 82554908375054782}
+  crunch: {fileID: 82876912520584904}
 --- !u!114 &114404388702998594
 MonoBehaviour:
   m_ObjectHideFlags: 1

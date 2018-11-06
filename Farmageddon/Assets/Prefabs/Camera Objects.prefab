@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 8608ec81ee27a15488d33f9dad239e91, type: 2}
+  m_NoiseProfile: {fileID: 11400000, guid: 554b0ed52734c154eab51f6cedd3a7d7, type: 2}
   m_AmplitudeGain: 0.2
   m_FrequencyGain: 0
   mNoiseOffsets: {x: -70.95422, y: -516.92554, z: 294.30075}
@@ -381,8 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeness: 5
-  noiseFrequency: 0
-  frequencyCoolDown: 0.5
+  noiseFrequency: 15
+  frequencyCoolDown: 0.8
   camera: {fileID: 20694700208713382}
   cursor: {fileID: 1669783088036300}
   character: {fileID: 0}

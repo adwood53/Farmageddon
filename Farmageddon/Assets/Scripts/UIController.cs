@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour {
 	public float xpFillAmount = 0;
 	public float healthFillAmount = 0;
 	public GameObject gameOver;
+	public MusicController music;
 
 	private InventoryManager inventory;
 	private CharacterControllerNew health;
@@ -38,7 +39,10 @@ public class UIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		if(music != null)
+		{
+			music.hp = healthFillAmount;
+		}
 
 		if(inventory != null)
 		{

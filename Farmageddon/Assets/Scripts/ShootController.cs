@@ -90,6 +90,7 @@ public class ShootController : MonoBehaviour {
             bulletScript.damage = damage;
             
             clone.AddComponent<AudioSource>().enabled = true;
+            clone.AddComponent<AudioSource>().volume = 0.5f;
             clone.GetComponent<AudioSource>().clip = fireSound;
             clone.GetComponent<AudioSource>().Play();
         

@@ -7,10 +7,12 @@ public class EnemyController : MonoBehaviour
     public float Health;
     public float outputDamage;
     private float inputDamage;
+    private AudioSource sound;
 
     // Use this for initialization
     private void Start()
     {
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +24,7 @@ public class EnemyController : MonoBehaviour
             collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             collision.gameObject.GetComponent<Collider2D>().enabled = false;
             Debug.Log(Health);
+            if(sound != null && !sound.isPlaying) sound.Play();
         }
 
         if (Health <= 0)
