@@ -17,7 +17,9 @@ MonoBehaviour:
   gunName: daddy
   damage: 1
   speed: 5
-  fireRate: 15
+  fireRate: 57
+  fireSound: {fileID: 8300000, guid: c4fe915caeb70b147a9b49fd1737df12, type: 3}
+  screenShake: 57
   isAutomatic: 1
   isShotgun: 0
   bulletAmount: 1

@@ -19,7 +19,8 @@ public class EnemyController : MonoBehaviour
         {
             inputDamage = collision.gameObject.GetComponent<BulletScript>().damage;
             Health = Health - inputDamage;
-            DestroyObject(collision.gameObject);
+            collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            collision.gameObject.GetComponent<Collider2D>().enabled = false;
             Debug.Log(Health);
         }
 

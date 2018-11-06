@@ -6,6 +6,7 @@ public class ShootController : MonoBehaviour {
 
     public GunWeapon currentGunWeapon;
     public GameObject player;
+    public AudioClip fireSound;
     float lastFired = 0;
 
     [HideInInspector]public float damage;
@@ -15,6 +16,7 @@ public class ShootController : MonoBehaviour {
     private bool isShotgun;
     private int spreadAmount;
     private int bulletAmount;
+    private float screenShake;
     private BulletScript bulletScript;
 
     private GameObject bullet;
@@ -26,6 +28,8 @@ public class ShootController : MonoBehaviour {
 
     void Config ()
     {
+        screenShake = currentGunWeapon.screenShake;
+        fireSound = currentGunWeapon.fireSound;
         damage = currentGunWeapon.damage;
         bulletSpeed = currentGunWeapon.speed;
         fireRate = currentGunWeapon.fireRate;
@@ -33,28 +37,9 @@ public class ShootController : MonoBehaviour {
         isShotgun = currentGunWeapon.isShotgun;
         bulletAmount = currentGunWeapon.bulletAmount;
         spreadAmount = currentGunWeapon.spreadAmount;
-
-        bullet = new GameObject();
-        bullet.AddComponent<SpriteRenderer>();
-        bullet.AddComponent<Rigidbody2D>();
-        bulletRB = bullet.GetComponent<Rigidbody2D>();
-        bullet.GetComponent<SpriteRenderer>().sprite = gameBullet;
-        bullet.GetComponent<SpriteRenderer>().sortingOrder = -1;
-        bullet.AddComponent<BoxCollider2D>();
-        bullet.GetComponent<BoxCollider2D>().isTrigger = true;
-        bullet.AddComponent(typeof(BulletScript));
-        bullet.tag = "Weapon";
-
         gameBullet = currentGunWeapon.gameBullet;
-
-        bulletRB.gravityScale = 0;
-        bulletRB.constraints = RigidbodyConstraints2D.FreezeRotation;
-        bulletRB.bodyType = RigidbodyType2D.Kinematic;
-
-        bullet.transform.localScale = new Vector3(1, 1, 0);
-
-        bulletScript = bullet.GetComponent<BulletScript>();
-        bulletScript.damage = damage;
+        if(!isShotgun){bulletAmount = 1;}
+        bullet = new GameObject();
     }
 	
 	// Update is called once per frame
@@ -79,41 +64,47 @@ public class ShootController : MonoBehaviour {
     void Shoot()
     {
         Config();
-        
-        
-            bullet.transform.position = gameObject.transform.position;
-            bullet.transform.rotation = gameObject.transform.rotation;
 
-        if (!isShotgun)
-        {
-            clone = (GameObject)Instantiate(bullet);
-            clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
-            clone.GetComponent<SpriteRenderer>().sprite = gameBullet;
-
-            clone.AddComponent(typeof(BulletScript));
-            clone.GetComponent<BoxCollider2D>().enabled = true;
-            clone.GetComponent<BulletScript>().enabled = true;
-            DestroyObject(bullet);
-        }
-        else if (isShotgun)
-        {
             for (int i = 0; i < bulletAmount; i++)
             {
-                bullet.transform.position = gameObject.transform.position;
-                bullet.transform.rotation = gameObject.transform.rotation;
+            clone = (GameObject)Instantiate(bullet);
+            clone.tag = "Weapon";
 
-                clone = (GameObject)Instantiate(bullet);
-                clone.transform.Rotate(0, 0, ((i - ((bulletAmount / 2)))) * spreadAmount);
-                clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
-                clone.GetComponent<SpriteRenderer>().sprite = gameBullet;
+            clone.AddComponent<SpriteRenderer>();
+            clone.GetComponent<SpriteRenderer>().sprite = gameBullet;
+            clone.GetComponent<SpriteRenderer>().sortingOrder = -1;
 
-                clone.AddComponent(typeof(BulletScript));
-                clone.GetComponent<BoxCollider2D>().enabled = true;
-                clone.GetComponent<BulletScript>().enabled = true;
-                DestroyObject(bullet);
+            clone.AddComponent<Rigidbody2D>();
+            bulletRB = clone.GetComponent<Rigidbody2D>();
+            bulletRB.gravityScale = 0;
+            bulletRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+            bulletRB.bodyType = RigidbodyType2D.Kinematic;
+
+            clone.AddComponent<BoxCollider2D>().enabled = true;
+            clone.GetComponent<BoxCollider2D>().isTrigger = true;
+
+            clone.AddComponent(typeof(BulletScript));
+            bulletScript = clone.GetComponent<BulletScript>();
+            bulletScript.screenShake = screenShake;
+            bulletScript.damage = damage;
+            
+            clone.AddComponent<AudioSource>().enabled = true;
+            clone.GetComponent<AudioSource>().clip = fireSound;
+            clone.GetComponent<AudioSource>().Play();
+        
+            clone.transform.localScale = new Vector3(1, 1, 0);
+
+            clone.transform.position = gameObject.transform.position;
+            clone.transform.rotation = gameObject.transform.rotation;
+
+            if(isShotgun)
+            {
+                clone.transform.Rotate(0, 0, ((i - ((bulletAmount / 2)))) * spreadAmount); //Transform is over-written if it's a shotgun
             }
-        }
 
+            clone.GetComponent<Rigidbody2D>().velocity = new Vector2(clone.transform.up.y * bulletSpeed, clone.transform.right.y * bulletSpeed);
+
+            Destroy(bullet);
+            }
     }
-
 }

@@ -18,6 +18,8 @@ MonoBehaviour:
   damage: 10
   speed: 10
   fireRate: 10
+  fireSound: {fileID: 8300000, guid: b07d7457cd13c0d4ba9871ae941b415e, type: 3}
+  screenShake: 0
   isAutomatic: 0
   isShotgun: 1
   bulletAmount: 32

@@ -48,9 +48,9 @@ public class UIController : MonoBehaviour {
 			}
 			xpBar.fillAmount = xpFillAmount;
 
-			weaponName.text = inventory.weaps[(int)inventory.holding].GunName();
+			weaponName.text = inventory.gunName;
 			weaponTier.text = inventory.holdingTier.ToString();
-			gunSprite.sprite = inventory.weaps[(int)inventory.holding].GunSprite();
+			gunSprite.sprite = inventory.gunSprite;
 		}
 		else
 		{

@@ -17,7 +17,9 @@ MonoBehaviour:
   gunName: Board Gun
   damage: 7
   speed: 8
-  fireRate: 1
+  fireRate: 8
+  fireSound: {fileID: 8300000, guid: 1ffcda9bff4ec4a4ca43c7ff872bd220, type: 3}
+  screenShake: 10
   isAutomatic: 1
   isShotgun: 0
   bulletAmount: 1

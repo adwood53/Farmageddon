@@ -9,11 +9,13 @@ public class InventoryManager : MonoBehaviour {
 	public float swapTime = 0;    //The time that must pass before the weapon can be swapped again
 	private int[] xps;             //An array for all the XP amounts of the different weapons
 	private int[] tiers;           //An array for the tiers of the different weapons
+	
 
 	public GunChanger[] weaps; //An array to store the weapons that can be used
 	public GunWeapon[] gunList;
 	public GunWeapon[,] possibleGuns; //Array for all the possible guns to use
 	public string gunName;
+	public Sprite gunSprite;
 
 	public enum selectedWeapon //A enum to store the weapon types
 	{
@@ -75,6 +77,7 @@ public class InventoryManager : MonoBehaviour {
 		}
 
 		gunName = weaps[(int)holding].GunName();
+		gunSprite = weaps[(int)holding].GunSprite();
 	}
 
 	public void CycleWeapon(float scroll) //changes weapon
