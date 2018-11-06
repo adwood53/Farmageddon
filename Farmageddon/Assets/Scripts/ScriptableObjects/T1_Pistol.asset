@@ -16,8 +16,8 @@ MonoBehaviour:
   tier: 1
   gunName: Nail Gun
   damage: 5
-  speed: 1.63
-  fireRate: 1
+  speed: 5.51
+  fireRate: 5
   fireSound: {fileID: 8300000, guid: b07d7457cd13c0d4ba9871ae941b415e, type: 3}
   screenShake: 15
   isAutomatic: 0

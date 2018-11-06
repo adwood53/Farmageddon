@@ -856,6 +856,26 @@ Prefab:
       propertyPath: character
       value: 
       objectReference: {fileID: 2001288921}
+    - target: {fileID: 1623500068125392, guid: 142705da19c47914c9348c3e628efcde, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885876763081278, guid: 142705da19c47914c9348c3e628efcde, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510426327494166, guid: 142705da19c47914c9348c3e628efcde, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880779705814186, guid: 142705da19c47914c9348c3e628efcde, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440374895421416, guid: 142705da19c47914c9348c3e628efcde, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 142705da19c47914c9348c3e628efcde, type: 2}
   m_IsPrefabAsset: 0
@@ -6127,6 +6147,16 @@ Prefab:
     - target: {fileID: 1398474006547052, guid: fa4ad96aba88b24498131984e7c16113, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210017826488130, guid: fa4ad96aba88b24498131984e7c16113,
+        type: 2}
+      propertyPath: rotspeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431840088244850, guid: fa4ad96aba88b24498131984e7c16113,
+        type: 2}
+      propertyPath: rotspeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61627251121281476, guid: fa4ad96aba88b24498131984e7c16113, type: 2}

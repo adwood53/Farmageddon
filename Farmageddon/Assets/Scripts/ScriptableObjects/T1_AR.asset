@@ -11,14 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6f861d2bbc1da43aec33782b2acaf0, type: 3}
   m_Name: T1_AR
   m_EditorClassIdentifier: 
-  gunWeapon: {fileID: 21300000, guid: 7205fe62999c73444a0a09ab3c092d16, type: 3}
-  gameBullet: {fileID: 21300000, guid: 546da8439c9127f4a931ad70f5454256, type: 3}
+  gunWeapon: {fileID: 21300000, guid: 5b5cd1049b072614883f5f099355a288, type: 3}
+  gameBullet: {fileID: 21300000, guid: 60095857c09a7714ea1b824b08376d93, type: 3}
   tier: 1
   gunName: Board Gun
   damage: 7
   speed: 8
   fireRate: 8
-  fireSound: {fileID: 8300000, guid: 1ffcda9bff4ec4a4ca43c7ff872bd220, type: 3}
+  fireSound: {fileID: 8300000, guid: c4fe915caeb70b147a9b49fd1737df12, type: 3}
   screenShake: 10
   isAutomatic: 1
   isShotgun: 0

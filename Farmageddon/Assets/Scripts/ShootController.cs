@@ -48,8 +48,9 @@ public class ShootController : MonoBehaviour {
 
         if (!isAutomatic && Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+               Shoot();
         }
+
         if (isAutomatic && Input.GetButton("Fire1"))
         {
             if (Time.time - lastFired > 1 / fireRate)
