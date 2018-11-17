@@ -29,15 +29,18 @@ public class MusicController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(hp < 1) bass.volume = volume;
-		else bass.volume = 0;
-		if(hp <= 0.8) antiMotif.volume = volume;
-		else antiMotif.volume = 0;
-		if(hp <= 0.5) motif.volume = volume;
-		else motif.volume = 0;
-		if(hp <= 0.7) crunch.volume = volume;
-		else crunch.volume = 0;
-		if(hp <= 0.3) whine.volume = volume;
-		else whine.volume = 0;
+		if (Time.frameCount >30)
+		{
+			if(hp < 1) bass.volume = volume;
+			else bass.volume = 0;
+			if(hp <= 0.8) antiMotif.volume = volume;
+			else antiMotif.volume = 0;
+			if(hp <= 0.5) motif.volume = volume;
+			else motif.volume = 0;
+			if(hp <= 0.7) crunch.volume = volume;
+			else crunch.volume = 0;
+			if(hp <= 0.3) whine.volume = volume;
+			else whine.volume = 0;
+		}
 	}
 }

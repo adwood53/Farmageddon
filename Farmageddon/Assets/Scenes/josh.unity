@@ -1256,6 +1256,51 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82743772385024588, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82978354294061196, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82000816962679000, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82993177862451356, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82436033776343954, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82876912520584904, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82554908375054782, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82554908375054782, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114353349750968354, guid: 142705da19c47914c9348c3e628efcde,
+        type: 2}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 142705da19c47914c9348c3e628efcde, type: 2}
   m_IsPrefabAsset: 0

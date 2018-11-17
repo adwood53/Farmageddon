@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour {
 	public Text healthAmt;
 	public GameObject character;
 	public float xpFillAmount = 0;
-	public float healthFillAmount = 0;
+	public float healthFillAmount = 1;
 	public GameObject gameOver;
 	public MusicController music;
 
